@@ -21,5 +21,7 @@ public class BasicLinearSearch {
             System.out.println("Element not found in array");
         }
     }
+    
 }
+
 
