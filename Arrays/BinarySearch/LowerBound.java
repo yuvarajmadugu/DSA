@@ -4,6 +4,7 @@ public class LowerBound {
     static int lowerBound(int[] arr, int x) {
         int low = 0;
         int high = arr.length-1;
+
         if(x > arr[arr.length-1]){
             return -1;
         }
