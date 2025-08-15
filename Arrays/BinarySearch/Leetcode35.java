@@ -1,6 +1,7 @@
 package DSA.Arrays.BinarySearch;
 
 public class Leetcode35 {
+    
     static int searchInsertPosition(int[] arr, int x){
         int low = 0;
         int high = arr.length-1;
@@ -27,3 +28,4 @@ public class Leetcode35 {
         System.out.println(position);
     }
 }
+
