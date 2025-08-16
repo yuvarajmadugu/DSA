@@ -1,7 +1,6 @@
 package DSA.Arrays.BinarySearch;
 
 public class CountOccurrenceOfNum {
-    
     static int searchPosition(int[] arr, int x, boolean findPosition){
         int low = 0, high = arr.length-1, pos = -1;
 
@@ -52,5 +51,3 @@ public class CountOccurrenceOfNum {
         System.out.println(result);
     }
 }
-
-
