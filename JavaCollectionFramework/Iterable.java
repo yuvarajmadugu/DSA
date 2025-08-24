@@ -10,6 +10,7 @@ public class Iterable {
         List<Integer> list  = new ArrayList<>(List.of(1,2,3,45,5));
         System.out.println(list);
 
+        //Iterator
         Iterator<Integer> itr = list.iterator();
         while (itr.hasNext()){
             int num = itr.next();
@@ -17,4 +18,5 @@ public class Iterable {
         }
     }
 }
+
 
