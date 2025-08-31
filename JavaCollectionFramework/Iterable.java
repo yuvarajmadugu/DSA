@@ -6,17 +6,14 @@ import java.util.List;
 
 public class Iterable {
     public static void main(String[] args) {
-        //List
         List<Integer> list  = new ArrayList<>(List.of(1,2,3,45,5));
         System.out.println(list);
 
-        //Iterator
         Iterator<Integer> itr = list.iterator();
         while (itr.hasNext()){
             int num = itr.next();
             System.out.println(num);
         }
+
     }
 }
-
-
