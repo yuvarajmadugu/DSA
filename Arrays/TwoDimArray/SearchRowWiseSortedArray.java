@@ -16,7 +16,7 @@ public class SearchRowWiseSortedArray {
                 high = mid-1;
             }
         }
-        return -1;
+        return -1; 
     }
 
     static int[] searchSortedRowMatrix(int[][] matrix, int target){
@@ -39,4 +39,5 @@ public class SearchRowWiseSortedArray {
         System.out.println(Arrays.toString(result));
     }
 }
+
 
