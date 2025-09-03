@@ -2,7 +2,7 @@ package DSA.Arrays.TwoDimArray;
 
 import java.util.Arrays;
 
-public class SearchRowNColWiseSortedArray { 
+public class SearchRowNColWiseSortedArray {
     static int[] searchRowColSortedArr(int[][] matrix, int target) {
         int row = matrix.length;
         int col = matrix[0].length;
@@ -27,5 +27,6 @@ public class SearchRowNColWiseSortedArray {
         System.out.println(Arrays.toString(result));
     }
 }
+
 
 
