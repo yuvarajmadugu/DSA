@@ -16,7 +16,7 @@ public class SearchSortedArray {
                 high = mid-1;
             }
         }
-        return -1;
+        return -1; 
     }
 
     static int[] searchSortedMatrix(int[][] matrix, int target){
@@ -48,4 +48,5 @@ public class SearchSortedArray {
         System.out.println(Arrays.toString(result));
     }
 }
+
 
