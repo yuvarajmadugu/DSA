@@ -2,7 +2,7 @@ package DSA.Arrays.TwoDimArray;
 
 import java.util.Arrays;
 
-public class SearchRowWiseSortedArray { 
+public class SearchRowWiseSortedArray {
     static int binarySearch(int[] arr, int target){
         int low = 0;
         int high = arr.length;
@@ -39,5 +39,6 @@ public class SearchRowWiseSortedArray {
         System.out.println(Arrays.toString(result));
     }
 }
+
 
 
