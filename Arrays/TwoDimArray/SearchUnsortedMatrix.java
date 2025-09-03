@@ -2,7 +2,7 @@ package DSA.Arrays.TwoDimArray;
 
 import java.util.Arrays;
 
-public class SearchUnsortedMatrix { 
+public class SearchUnsortedMatrix {
     static int[] searchUnsortedMatrix(int[][] matrix, int target){
         int row = matrix.length;
         int col = matrix[0].length;
@@ -23,5 +23,6 @@ public class SearchUnsortedMatrix {
         System.out.println(Arrays.toString(ans));
     }
 }
+
 
 
