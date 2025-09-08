@@ -9,7 +9,7 @@ public class SearchSortedArray {
         while(low<=high){
             int mid = low+(high-low)/2;
             if(target == arr[mid]){
-                return mid;
+                return mid; 
             }else if (target > arr[mid]){
                 low = mid+1;
             }else {
@@ -48,6 +48,7 @@ public class SearchSortedArray {
         System.out.println(Arrays.toString(result));
     }
 }
+
 
 
 
