@@ -16,7 +16,7 @@ public class SearchRowNColWiseSortedArray {
                 j--;
             }else {
                 i++;
-            }
+            } 
         }
         return new int[] {-1,-1};
     }
@@ -27,6 +27,7 @@ public class SearchRowNColWiseSortedArray {
         System.out.println(Arrays.toString(result));
     }
 }
+
 
 
 
