@@ -10,7 +10,7 @@ public class SearchUnsortedMatrix {
             for(int j=0; j<col; j++){
                 if(target == matrix[i][j]){
                     return new int[] {i,j};
-                }
+                } 
             }
         }
         return new int[] {-1,-1}; 
@@ -23,6 +23,7 @@ public class SearchUnsortedMatrix {
         System.out.println(Arrays.toString(ans));
     }
 }
+
 
 
 
