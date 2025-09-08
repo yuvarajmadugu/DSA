@@ -10,7 +10,7 @@ public class SearchRowWiseSortedArray {
             int mid = low+(high-low)/2;
             if(target == arr[mid]){
                 return mid;
-            }else if (target > arr[mid]){
+            }else if (target > arr[mid]){ 
                 low = mid+1;
             }else {
                 high = mid-1;
@@ -39,6 +39,7 @@ public class SearchRowWiseSortedArray {
         System.out.println(Arrays.toString(result));
     }
 }
+
 
 
 
