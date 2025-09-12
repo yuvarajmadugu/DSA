@@ -6,7 +6,7 @@ public class ArrayListDemo {
     public static void main(String[] args) {
         //Dynamic Array Implementation of List, 0 based Index
 
-        ArrayList<Integer> arr = new ArrayList<>();
+        ArrayList<Integer> arr = new ArrayList<>(20);
         arr.add(10);
         arr.add(20);
         arr.add(30);
@@ -23,3 +23,4 @@ public class ArrayListDemo {
 
     }
 }
+
