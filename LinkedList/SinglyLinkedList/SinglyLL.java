@@ -123,7 +123,7 @@ public class SinglyLL {
         while(temp.next.next != null){
             temp = temp.next;
         }
-        System.out.println("De");
+        System.out.println("Deleted node: " +temp.data);
     }
 
 
@@ -143,3 +143,4 @@ public class SinglyLL {
 
     }
 }
+
