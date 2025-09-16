@@ -123,7 +123,21 @@ public class SinglyLL {
         while(temp.next.next != null){
             temp = temp.next;
         }
-        System.out.println("Deleted node: " +temp.data);
+        System.out.println("De"); //to be done
+    }
+
+    int CountNodes(Node head){
+        if (head == null){
+            return 0;
+        }
+        int count = 0;
+        Node temp = head;
+        do {
+            count++;
+            temp = temp.next;
+        }while(temp != head);
+        //System.out.println(count);
+        return count;
     }
 
 
@@ -143,4 +157,3 @@ public class SinglyLL {
 
     }
 }
-
