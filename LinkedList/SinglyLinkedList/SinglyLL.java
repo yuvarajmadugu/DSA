@@ -123,8 +123,56 @@ public class SinglyLL {
         while(temp.next.next != null){
             temp = temp.next;
         }
-        System.out.println("De"); //to be done
+        System.out.println("Deleted Node: " +temp.next.data);
+        temp.next = temp.next.next;
+        size--;
     }
+
+    void deleteFromPosition(int pos){
+        if(head == null){
+            System.out.println("Can not t=delete an element coz list is empty");
+            return;
+        }
+        //case 1: if there is no size exist
+        /*
+        if(pos == 1){
+            deleteFromBeginning();
+            return;
+        }
+        if(pos <= 0 || pos < size){
+            System.out.println("Given position is invalid can not delete");
+            return;
+        }
+        int currentPos = 1;
+        Node temp = head;
+        while (currentPos < pos -1){
+            temp = temp.next;
+            currentPos++;
+        }
+        System.out.println("Deleted node: " +temp.next.data);
+        temp.next = temp.next.next;
+        size--;
+         */
+
+        //case2: if no size exist
+        int currentPos = 1;
+        Node temp, prevNode;
+        prevNode = null;
+        temp = head;
+        while (temp != null){
+            if(currentPos == pos){
+                System.out.println("Deleted Node: " +temp.data);
+                prevNode.next = temp.next;
+                size--;
+                return;
+            }
+            prevNode = temp;
+            temp = temp.next;
+            currentPos++;
+        }
+    }
+
+
 
     int CountNodes(Node head){
         if (head == null){
@@ -153,6 +201,10 @@ public class SinglyLL {
         sll.insertAfterValue(95,35);
         sll.traverseLL();
         sll.deleteFromBeginning();
+        sll.traverseLL();
+        sll.deleteFromEnd();
+        sll.traverseLL();
+        sll.deleteFromPosition(1);
         sll.traverseLL();
 
     }
