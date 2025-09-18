@@ -1,6 +1,7 @@
 package DSA.LinkedList.SinglyLinkedList;
 
 public class SinglyLL {
+
     private Node head;
     private Node tail;
     private int size;
@@ -15,7 +16,6 @@ public class SinglyLL {
         }
         size++;
     }
-
     void traverseLL(){
         Node temp = head;
         if(head == null){
@@ -28,7 +28,6 @@ public class SinglyLL {
         }
         System.out.println("End");
     }
-
     void insertAtEnd(int data){
         Node newNode = new Node(data);
         if(head == null){
@@ -49,7 +48,6 @@ public class SinglyLL {
 //        temp.next = newNode;
 //        size++;
     }
-
     void insertAtPosition(int data, int pos){
         Node newNode = new Node(data);
         if(pos <= 0 || pos > size+1){
@@ -78,7 +76,6 @@ public class SinglyLL {
         temp.next = newNode;
         size++;
     }
-
     void insertAfterValue(int data, int value){
         Node newNode = new Node(data);
         Node temp = head;
@@ -106,7 +103,6 @@ public class SinglyLL {
             tail = null;
         }
     }
-
     void deleteFromEnd(){
         if(head == null){
             System.out.println("Cant delete because list is empty.");
@@ -127,18 +123,17 @@ public class SinglyLL {
         temp.next = temp.next.next;
         size--;
     }
-
     void deleteFromPosition(int pos){
         if(head == null){
-            System.out.println("Can not t=delete an element coz list is empty");
+            System.out.println("Can not delete an element coz list is empty");
             return;
         }
-        //case 1: if there is no size exist
-        /*
         if(pos == 1){
             deleteFromBeginning();
             return;
         }
+        //case 1: if there is no size exist
+        /*
         if(pos <= 0 || pos < size){
             System.out.println("Given position is invalid can not delete");
             return;
@@ -171,6 +166,90 @@ public class SinglyLL {
             currentPos++;
         }
     }
+    void deleteByValue(int value){
+        if(head == null){
+            System.out.println("Cant delete becoz list is empty.");
+            return;
+        }
+        if(head.data == value){
+            System.out.println("Deleted node: " +head.data);
+            head = head.next;
+            size--;
+            return;
+
+            //or
+            //deleteFromBeginning();
+            //return;
+        }
+        Node temp, prevNode;
+        prevNode = null;
+        temp = head;
+        while((temp != null) && (temp.data != value)){
+            prevNode = temp;
+            temp = temp.next;
+        }
+        if(temp != null){
+            System.out.println("Deleted node: "+ temp.data);
+            prevNode.next = temp.next;
+            size--;
+        }else {
+            System.out.println("No such Node exist in the list.");
+        }
+    }
+
+    void findLength(){
+        Node temp = head;
+        int count = 0;
+        while (temp != null){
+            count++;
+            temp = temp.next;
+        }
+        System.out.println("Length of the linkedlist is: "+count);
+    }
+    boolean searchAnElement(int value){
+        Node temp = head;
+        while (temp != null){
+            if(temp.data == value){
+                return true;
+            }
+            temp = temp.next;
+        }
+        return false;
+    }
+
+    //leetcode 206: Reverse Linkedlist
+    void reverseLL(){
+        if(head == null){
+            System.out.println("List is empty cant reverse it.");
+            return;
+        }
+        if (head.next == null){
+            System.out.println("Only 1 element in the list.");
+            System.out.println(head.data);
+            return;
+        }
+        //to reverse connection from forward traversal to backward
+        Node temp, prevNode, nextNode;
+        temp = head;
+        prevNode = null;
+        while (temp != null){
+            nextNode = temp.next;
+            temp.next = prevNode;
+            prevNode = temp;
+            temp = nextNode;
+        }
+        head = prevNode;
+        //to print onto the console
+        Node temp2 = prevNode;
+        while(temp2 != null){
+            System.out.print(temp2.data +" ");
+            temp2 = temp2.next;
+        }
+    }
+
+
+
+
 
 
 
@@ -193,6 +272,11 @@ public class SinglyLL {
         SinglyLL sll = new SinglyLL();
         sll.insertAtBeginning(10);
         sll.insertAtBeginning(20);
+        sll.insertAtBeginning(30);
+        sll.insertAtBeginning(40);
+        sll.insertAtBeginning(50);
+        sll.insertAtBeginning(60);
+        sll.insertAtBeginning(70);
         sll.traverseLL();
         sll.insertAtEnd(35);
         sll.traverseLL();
@@ -206,6 +290,16 @@ public class SinglyLL {
         sll.traverseLL();
         sll.deleteFromPosition(1);
         sll.traverseLL();
+        sll.deleteByValue(58);
+        sll.traverseLL();
+        sll.findLength();
+        boolean ans = sll.searchAnElement(56);
+        System.out.println(ans);
+        sll.traverseLL();
+        sll.reverseLL();
+
+
+
 
     }
 }
