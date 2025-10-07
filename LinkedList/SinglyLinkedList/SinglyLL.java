@@ -247,12 +247,6 @@ public class SinglyLL {
         }
     }
 
-
-
-
-
-
-
     int CountNodes(Node head){
         if (head == null){
             return 0;
@@ -266,7 +260,6 @@ public class SinglyLL {
         //System.out.println(count);
         return count;
     }
-
 
     public static void main(String[] args) {
         SinglyLL sll = new SinglyLL();
@@ -297,9 +290,6 @@ public class SinglyLL {
         System.out.println(ans);
         sll.traverseLL();
         sll.reverseLL();
-
-
-
 
     }
 }
