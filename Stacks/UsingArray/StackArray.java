@@ -3,16 +3,29 @@ package DSA.Stacks.UsingArray;
 public class StackArray {
     protected int[] stackArray;
     protected int top;
+    protected int maxSize;
 
     public StackArray(int size){
+        maxSize = size;
         stackArray = new int[size];
         top = -1;
     }
 
+    //dynamic resizing creating array resolving size issues:
+    public void resize(){
+        maxSize = maxSize*2;
+        int[] newArray = new int[maxSize];
+        for(int i=0; i<stackArray.length; i++){
+            newArray[i] = stackArray[i];
+        }
+        stackArray = newArray;
+    }
+
     public void push(int element){
         if(isFull()){
-            System.out.println("Cant push coz list is full.");
-            return;
+            resize();
+            //System.out.println("Cant push coz list is full.");
+            //;
         }
         top++;
         stackArray[top] = element;
@@ -42,6 +55,8 @@ public class StackArray {
         int x = stackArray[top];
         return x;
     }
+
+
 
 
     public static void main(String[] args) {
