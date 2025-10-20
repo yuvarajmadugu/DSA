@@ -12,6 +12,7 @@ public class StackArray {
     }
 
     //dynamic resizing creating array resolving size issues:
+    //while dynamic resizing is known this case is called AMORTIZED - ORDER(1)
     public void resize(){
         maxSize = maxSize*2;
         int[] newArray = new int[maxSize];
