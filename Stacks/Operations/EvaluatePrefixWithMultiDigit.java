@@ -2,7 +2,8 @@ package DSA.Stacks.Operations;
 
 import java.util.Stack;
 
-public class EvaluatePrefix {
+public class EvaluatePrefixWithMultiDigit {
+
     static boolean isOperator(char op){
         return op == '+' || op == '-' || op == '*' || op == '/' || op == '^';
     }
@@ -16,22 +17,31 @@ public class EvaluatePrefix {
             default -> throw new IllegalArgumentException();
         };
     }
-    static int evaluatePrefix(String expression){
-        Stack<Integer> stack = new Stack<>();
-        for(int i=expression.length()-1; i>=0; i--){
-            char ch = expression.charAt(i);
-            if(Character.isDigit(ch)){
-                //in evaluation if character is a number, it is in the form of SI value (for eg. 0=48, 1=49, 2=50, 3=51)
-                //to store character value instead of SI value here a small formula is used i.e char-'0' //character zero
-                stack.push(ch-'0'); //character zero
+
+    static int evaluatePrefixWithMultiDigitmethod(char[] exp){
+        Stack<Integer> stack = new Stack<>(); //SC=o(n)
+        int i = exp.length-1;
+        while (i >= 0) { //TC = 0(n)
+            if(exp[i] == ' '){
+                i--;
+                continue;
             }
-            else if(isOperator(ch)) {
+            char ch = exp[i];
+            if(isOperator(ch)) {
                 int operator1 = stack.pop();
                 int operator2 = stack.pop();
                 int updatedOperator = compute(ch, operator1, operator2);
                 stack.push(updatedOperator);
+                i--;
             }
-            else {
+            else if (Character.isDigit(ch)) {
+                StringBuilder num = new StringBuilder(); //SC = o(k)
+                while (i>=0 && Character.isDigit(exp[i])) { //TC = o(k)
+                    num.insert(0, exp[i]);
+                    i--;
+                }
+                stack.push(Integer.parseInt(num.toString()));
+            } else {
                 throw new IllegalArgumentException("Invalid char " +ch);
             }
         }
@@ -41,9 +51,10 @@ public class EvaluatePrefix {
 
     public static void main(String[] args) {
         try{
-            String prefix = "*2+21";
-            int output = evaluatePrefix(prefix);
-            System.out.println("Output of Prefix expression is: " +output);
+            String prefix = "+ 10 * 2 3";
+            char[] charArrRef = prefix.toCharArray();  //['+',' ','1','0',' ','*',' ','2',' ','3']
+            int output = evaluatePrefixWithMultiDigitmethod(charArrRef);
+            System.out.println("Output of Prefix expression with multi digit is: " +output);
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
